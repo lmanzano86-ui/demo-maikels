@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Propuesta — Maikel's Bakery & Maikel's Kitchen</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,serif;color:#2e1a0e;line-height:1.65;background:#fff}
+.page{max-width:760px;margin:0 auto;padding:56px 48px}
+.cover{background:#2e1a0e;color:#fff8ec;text-align:center;padding:90px 48px}
+.cover .kick{font-family:Arial,sans-serif;font-size:12px;letter-spacing:4px;color:#e8a33d;text-transform:uppercase}
+.cover h1{font-family:'Arial Narrow',Arial,sans-serif;font-size:44px;font-weight:900;margin:18px 0 6px;text-transform:uppercase;letter-spacing:1px}
+.cover h2{font-family:'Arial Narrow',Arial,sans-serif;font-size:22px;font-weight:700;color:#e8a33d;text-transform:uppercase}
+.cover p{margin-top:26px;color:#cbb18a;font-size:15px}
+h2.sec{font-family:'Arial Narrow',Arial,sans-serif;font-size:24px;font-weight:900;color:#2e1a0e;text-transform:uppercase;letter-spacing:1px;margin:44px 0 14px;border-bottom:3px solid #e8a33d;padding-bottom:8px}
+h3{font-family:'Arial Narrow',Arial,sans-serif;font-size:17px;font-weight:800;color:#8c4a12;margin:20px 0 8px;text-transform:uppercase}
+p{margin:10px 0;font-size:15px}
+ul{margin:10px 0 10px 22px;font-size:15px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{background:#2e1a0e;color:#e8a33d;font-family:'Arial Narrow',Arial,sans-serif;text-align:left;padding:10px 12px;text-transform:uppercase;letter-spacing:1px;font-size:13px}
+td{border-bottom:1px solid #e8d5b5;padding:10px 12px;vertical-align:top}
+.alert{background:#fdf0e2;border-left:5px solid #c65d21;padding:16px 20px;margin:18px 0;font-size:14px}
+.alert b{color:#8c2b21}
+.ok{background:#f0f7ec;border-left:5px solid #5a8a3c;padding:16px 20px;margin:18px 0;font-size:14px}
+.price-box{background:#2e1a0e;color:#fff8ec;border-radius:12px;padding:28px;margin:22px 0;text-align:center}
+.price-box .plan{font-family:'Arial Narrow',Arial,sans-serif;font-size:20px;font-weight:800;color:#e8a33d;text-transform:uppercase;letter-spacing:2px}
+.price-box .monto{font-size:40px;font-weight:900;margin:10px 0;font-family:'Arial Narrow',Arial,sans-serif}
+.price-box .monto small{font-size:18px;color:#cbb18a}
+.price-box p{color:#cbb18a;font-size:14px}
+.foot{margin-top:50px;padding-top:18px;border-top:2px solid #e8d5b5;font-size:13px;color:#7a5f45}
+.foot b{color:#2e1a0e}
+.tag{display:inline-block;background:#c65d21;color:#fff;font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:12px;text-transform:uppercase;margin-left:8px}
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="kick">Propuesta de presencia digital</div>
+  <h1>Maikel's Bakery</h1>
+  <h2>&amp; Maikel's Kitchen</h2>
+  <p>Panadería cubana · Restaurante cubano · Tampa, FL<br>Octubre 2026</p>
+</div>
+<div class="page">
+
+<h2 class="sec">1. Hallazgos de la auditoría</h2>
+
+<h3>Maikel's Bakery — sitio web hackeado <span class="tag">Crítico</span></h3>
+<div class="alert">
+<b>maikelsbakery.com está comprometido.</b> En lugar de la panadería, el sitio muestra spam de cadenas de comida rápida (Culver's, Arby's, Taco Bell) generado por un ataque al WordPress. Un cliente que busque la panadería en Google encuentra esto.
+</div>
+<p><b>Análisis de seguridad (verificado octubre 2026):</b></p>
+<ul>
+<li>WordPress 6.9.4 con la versión expuesta públicamente (facilita ataques dirigidos).</li>
+<li>Usuario administrador <b>«adminbakery»</b> visible para cualquiera (enumeración de usuarios activa).</li>
+<li><b>wp-login.php</b> y <b>readme.html</b> accesibles sin protección.</li>
+<li><b>Cero cabeceras de seguridad</b>: sin HSTS, sin protección contra clickjacking ni contra inyección de contenido.</li>
+<li>Contenido 100% spam SEO: el sitio ya no le pertenece en la práctica al negocio.</li>
+</ul>
+<p><b>Recomendación:</b> no vale la pena «limpiar» ese WordPress — hay que reconstruir desde cero en una plataforma segura, rápida y sin mantenimiento técnico para el dueño.</p>
+
+<h3>Maikel's Kitchen — web mínima sin motor de reservas</h3>
+<p>Su sitio <b>maikels-kitchen.shop</b> es una página básica: texto descriptivo sin menú con precios, sin sistema de pedidos en línea y sin captación de clientes. Todo el pedido digital depende de DoorDash (que cobra comisión por cada orden).</p>
+
+<h3>Calificación que frena clientes</h3>
+<p>Maikel's Bakery tiene <b>3.4★ con 913 reseñas</b> en Google. Con ese volumen de reseñas, cada décima cuenta: los clientes comparan antes de visitar. En DoorDash la foto es mejor (4.4★, 1,000+ calificaciones) — hay que llevar esa reputación a su propia web.</p>
+
+<h3>Sin redes oficiales verificables</h3>
+<p>No se encontraron Instagram ni Facebook oficiales activos de ninguno de los dos negocios. Todo el descubrimiento ocurre en Google y DoorDash, donde no controlan la narrativa.</p>
+
+<h2 class="sec">2. Tabla de mejoras</h2>
+<table>
+<tr><th>Hoy</th><th>Con la propuesta</th></tr>
+<tr><td>Sitio hackeado con spam (Bakery)</td><td>Web nueva, segura y rápida desde cero</td></tr>
+<tr><td>Página mínima sin pedidos (Kitchen)</td><td>Menú completo con precios y pedido directo</td></tr>
+<tr><td>3.4★ sin gestión de reputación</td><td>Sección de reseñas + estrategia para subir calificación</td></tr>
+<tr><td>Dependencia total de DoorDash</td><td>Pedidos por teléfono/WhatsApp directos, sin comisión</td></tr>
+<tr><td>Solo inglés en listados</td><td>Web bilingüe ES/EN para su clientela</td></tr>
+<tr><td>Sin vitrina de pasteles por encargo</td><td>Sección de cakes y bandejitas de fiesta con precios</td></tr>
+</table>
+
+<h2 class="sec">3. Oportunidad: dos negocios, un dueño</h2>
+<div class="ok">
+La investigación confirma que ambos negocios pertenecen a <b>Maikel Duarte</b> (registros oficiales del estado de Florida, MAIKEL'SKITCHEN EXPRESS LLC). Además existió un tercer local, <b>Maikel's Kitchen Westchase</b> (11935 Sheldon Rd), hoy cerrado permanentemente.
+</div>
+<p>Esto permite una estrategia conjunta: una sola inversión en presencia digital que cubra la panadería (el negocio insignia, abierto 5AM–11PM) y el restaurante (completas cubanas, 7AM–9PM), con marca consistente y administración unificada.</p>
+
+<h2 class="sec">4. Plan recomendado</h2>
+<div class="price-box">
+  <div class="plan">Plan Profesional — por negocio</div>
+  <div class="monto">$699 <small>+ $69/mes</small></div>
+  <p>Diseño a medida · Menú con precios reales · Bilingüe ES/EN · Pedidos directos sin comisión · Optimización Google</p>
+</div>
+<p><b>¿Por qué el Profesional?</b> Ambos negocios viven del pedido recurrente y del descubrimiento local. El Profesional incluye el menú completo administrable, la vitrina de pasteles por encargo y la estrategia de reseñas que necesitan para convertir ese 3.4★ en ventaja.</p>
+<p><b>Propuesta comercial por los dos negocios:</b> al contratar ambos sitios juntos, la mensualidad del segundo negocio queda en <b>$49/mes</b> en lugar de $69/mes (cortesía por volumen, no es precio oficial de lista).</p>
+
+<h2 class="sec">5. Precios oficiales</h2>
+<table>
+<tr><th>Plan</th><th>Instalación</th><th>Mensualidad</th></tr>
+<tr><td><b>Lanzamiento</b></td><td>$499</td><td>$69/mes</td></tr>
+<tr><td><b>Profesional</b> (recomendado)</td><td>$699</td><td>$69/mes</td></tr>
+<tr><td><b>Sin Entrada</b></td><td>$0</td><td>$149/mes × 12</td></tr>
+</table>
+<p>Pago por Stripe. Precios en USD, impuestos no incluidos. Esta propuesta tiene validez de 30 días.</p>
+
+<h2 class="sec">6. Contacto</h2>
+<p><b>Lester Manzano</b><br>New Age Professional Services<br>Tel: 813-235-3313</p>
+
+<div class="foot">
+<p><b>Nota:</b> los precios del menú mostrados en el demo fueron verificados en DoorDash en octubre 2026 y pueden variar en mostrador. Las imágenes del demo son ilustrativas; se reemplazarán con fotos reales del negocio.</p>
+</div>
+
+</div>
+</body>
+</html>

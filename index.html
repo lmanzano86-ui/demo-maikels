@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maikel's Bakery — Panadería cubana en Tampa, FL</title>
+<meta name="description" content="Maikel's Bakery: panadería cubana en Tampa. Pan caliente desde las 5AM, pastelitos, tres leches, sándwich cubano y café cubano. Abierto todos los días 5AM–11PM.">
+<style>
+:root{
+  --coffee:#6e1423; --coffee2:#8f1d2c;
+  --amber:#f2b705; --amber-d:#d19a04;
+  --cream:#fff8ec; --cream2:#f7ecd6;
+  --terra:#c0392b; --ink:#3a2415; --mut:#7a5f45;
+  --line:#e8d5b5; --verde:#5a8f3c; --verde-d:#3f6b28;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+/* ticker */
+.ticker{background:var(--coffee);color:var(--amber);font-family:'Arial Narrow',Arial,sans-serif;font-weight:700;letter-spacing:2px;font-size:13px;text-align:center;padding:9px 12px;text-transform:uppercase}
+/* nav */
+nav{background:var(--cream);border-bottom:3px solid var(--amber);position:sticky;top:0;z-index:50}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;flex-wrap:wrap}
+.brand{font-family:'Arial Narrow',Arial,sans-serif;font-weight:900;font-size:24px;color:var(--coffee);text-decoration:none;letter-spacing:1px;line-height:1.1}
+.brand small{display:block;font-size:11px;letter-spacing:4px;color:var(--terra);font-weight:700}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{font-family:'Arial Narrow',Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;color:var(--coffee2);text-decoration:none;text-transform:uppercase}
+.links a:hover{color:var(--terra)}
+.lang{display:flex;border:2px solid var(--coffee);border-radius:20px;overflow:hidden}
+.lang button{font-family:Arial,sans-serif;font-size:12px;font-weight:700;padding:6px 14px;border:0;cursor:pointer;background:transparent;color:var(--coffee)}
+.lang button.on{background:var(--coffee);color:var(--amber)}
+/* hero */
+.hero{position:relative;min-height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(110,20,35,.72),rgba(110,20,35,.55))}
+.hero-in{position:relative;z-index:2;padding:70px 20px;max-width:860px}
+.kicker{display:inline-block;font-family:'Arial Narrow',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:4px;color:var(--amber);border:1px solid var(--amber);border-radius:30px;padding:8px 22px;margin-bottom:22px;text-transform:uppercase}
+.hero h1{font-family:'Arial Narrow',Arial,sans-serif;font-weight:900;font-size:clamp(32px,5.5vw,56px);line-height:1.08;letter-spacing:1px;text-transform:uppercase;overflow-wrap:break-word}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.sub{font-size:clamp(16px,2.4vw,21px);margin:20px auto 32px;max-width:620px;color:#f3e3c6;font-style:italic}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-family:'Arial Narrow',Arial,sans-serif;font-weight:800;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:40px;padding:15px 34px;cursor:pointer}
+.btn-amber{background:var(--amber);color:var(--coffee)}
+.btn-amber:hover{background:#f2b355}
+.btn-ghost{border:2px solid #fff;color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.15)}
+.rating-line{margin-top:26px;font-size:15px;color:#f3e3c6}
+.rating-line b{color:var(--amber)}
+.open-badge{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:'Arial Narrow',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#dff0d0;background:rgba(90,143,60,.22);border:1px solid var(--verde);border-radius:30px;padding:7px 18px}
+.open-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--verde);box-shadow:0 0 8px var(--verde)}
+/* sections */
+section{padding:64px 0}
+.sec-head{text-align:center;margin-bottom:38px}
+.sec-kick{font-family:'Arial Narrow',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:4px;color:var(--verde-d);text-transform:uppercase}
+.sec-head h2{font-family:'Arial Narrow',Arial,sans-serif;font-weight:900;font-size:clamp(30px,5vw,44px);color:var(--coffee);text-transform:uppercase;letter-spacing:1px;margin-top:8px}
+.sec-head p{color:var(--mut);max-width:640px;margin:10px auto 0}
+/* board cards */
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(90,55,15,.10)}
+.card .ph{height:170px;overflow:hidden;background:var(--cream2)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .tx{padding:18px}
+.card .tx h3{font-family:'Arial Narrow',Arial,sans-serif;font-size:19px;font-weight:800;color:var(--coffee);text-transform:uppercase;letter-spacing:.5px}
+.card .tx p{font-size:14px;color:var(--mut);margin:6px 0 10px}
+.price{font-family:'Arial Narrow',Arial,sans-serif;font-weight:900;font-size:20px;color:var(--terra)}
+/* menu tabs */
+.menu-sec{background:var(--coffee);color:#f3e3c6}
+.menu-sec .sec-head h2{color:#fff}
+.menu-sec .sec-head p{color:#cbb18a}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.tabs button{font-family:'Arial Narrow',Arial,sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;background:transparent;color:#e9cf9f;border:1.5px solid #6b4a26;border-radius:30px;padding:10px 22px;cursor:pointer}
+.tabs button.on{background:var(--amber);border-color:var(--amber);color:var(--coffee)}
+.menu-list{max-width:760px;margin:0 auto}
+.mi{display:flex;align-items:baseline;gap:12px;padding:13px 4px;border-bottom:1px dotted #6b4a26}
+.mi .nm{font-size:17px}
+.mi .dots{flex:1;border-bottom:2px dotted #6b4a26;transform:translateY(-4px)}
+.mi .pr{font-family:'Arial Narrow',Arial,sans-serif;font-weight:800;font-size:18px;color:var(--amber);white-space:nowrap}
+.menu-note{text-align:center;margin-top:26px;font-size:13px;color:#a98d63;font-style:italic}
+/* cakes */
+.cakes{background:var(--cream2)}
+.cake-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:30px}
+.cake{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
+.cake h3{font-family:'Arial Narrow',Arial,sans-serif;font-size:18px;font-weight:800;color:var(--coffee);text-transform:uppercase}
+.cake .price{font-size:24px;margin-top:8px;display:block}
+.cake-cta{text-align:center}
+.cake-cta p{color:var(--mut);margin-bottom:16px}
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 6px 20px rgba(90,55,15,.08)}
+.rev .stars{color:var(--amber-d);letter-spacing:2px;margin-bottom:10px}
+.rev p{font-style:italic;font-size:15px}
+.rev .who{margin-top:12px;font-family:'Arial Narrow',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;color:var(--mut);text-transform:uppercase}
+/* visit */
+.visit{background:var(--coffee);color:#f3e3c6}
+.visit .sec-head h2{color:#fff}
+.v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.v-card{background:#3a2413;border:1px solid #5a3a1e;border-radius:14px;padding:26px}
+.v-card h3{font-family:'Arial Narrow',Arial,sans-serif;font-size:17px;font-weight:800;letter-spacing:2px;color:var(--amber);text-transform:uppercase;margin-bottom:14px}
+.v-card p,.v-card li{font-size:15px;color:#e9d6b4}
+.v-card ul{list-style:none}
+.v-card li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dotted #5a3a1e}
+.v-card a{color:var(--amber);text-decoration:none;font-weight:700}
+/* footer */
+footer{background:#1e1007;color:#a98d63;text-align:center;padding:32px 20px;font-size:14px;border-top:3px solid var(--amber)}
+/* floating call */
+.call-fab{position:fixed;right:18px;bottom:18px;background:var(--terra);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:26px;box-shadow:0 6px 20px rgba(0,0,0,.35);z-index:60}
+@media(max-width:700px){.links{display:none}}
+</style>
+</head>
+<body>
+
+<div class="ticker" data-es="★ Abierto todos los días · 5:00 AM – 11:00 PM · Pan caliente desde la madrugada ★" data-en="★ Open every day · 5:00 AM – 11:00 PM · Hot bread from dawn ★">★ Abierto todos los días · 5:00 AM – 11:00 PM · Pan caliente desde la madrugada ★</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#">MAIKEL'S<small data-es="BAKERY · TAMPA, FL" data-en="BAKERY · TAMPA, FL">BAKERY · TAMPA, FL</small></a>
+    <div class="links">
+      <a href="#favoritos" data-es="Favoritos" data-en="Favorites">Favoritos</a>
+      <a href="#menu" data-es="Menú" data-en="Menu">Menú</a>
+      <a href="#pasteles" data-es="Pasteles" data-en="Cakes">Pasteles</a>
+      <a href="#visitanos" data-es="Visítanos" data-en="Visit us">Visítanos</a>
+    </div>
+    <div class="lang"><button id="btn-es" class="on">ES</button><button id="btn-en">EN</button></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="imgs/vitrina.jpg" alt="Vitrina de Maikel's Bakery">
+  <div class="hero-in">
+    <span class="kicker" data-es="Panadería cubana · Tampa" data-en="Cuban bakery · Tampa">Panadería cubana · Tampa</span>
+    <h1 data-es="Pan caliente <em>desde las 5</em> de la mañana" data-en="Hot bread <em>from 5</em> in the morning">Pan caliente <em>desde las 5</em> de la mañana</h1>
+    <p class="sub" data-es="Pastelitos, tres leches, sándwich cubano y colada — hechos en casa, todos los días." data-en="Pastelitos, tres leches, Cuban sandwich and colada — homemade, every day.">Pastelitos, tres leches, sándwich cubano y colada — hechos en casa, todos los días.</p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="#menu" data-es="Ver el menú" data-en="See the menu">Ver el menú</a>
+      <a class="btn btn-ghost" href="tel:+18132497550" data-es="Llamar: (813) 249-7550" data-en="Call: (813) 249-7550">Llamar: (813) 249-7550</a>
+    </div>
+    <div class="rating-line"><b>4.4★</b> <span data-es="en DoorDash · 1,000+ calificaciones · Delivery disponible" data-en="on DoorDash · 1,000+ ratings · Delivery available">en DoorDash · 1,000+ calificaciones · Delivery disponible</span></div>
+    <div><span class="open-badge"><span class="dot"></span><span data-es="Abierto ahora · 5AM – 11PM" data-en="Open now · 5AM – 11PM">Abierto ahora · 5AM – 11PM</span></span></div>
+  </div>
+</header>
+
+<section id="favoritos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kick" data-es="Lo más pedido" data-en="Most ordered">Lo más pedido</div>
+      <h2 data-es="Los favoritos de la casa" data-en="House favorites">Los favoritos de la casa</h2>
+    </div>
+    <div class="board">
+      <div class="card"><div class="ph"><img src="imgs/tres-leches.jpg" alt="Tres leches"></div><div class="tx"><h3 data-es="Tres Leches" data-en="Tres Leches">Tres Leches</h3><p data-es="El postre que todos repiten — cremoso y casero." data-en="The dessert everyone reorders — creamy and homemade.">El postre que todos repiten — cremoso y casero.</p><span class="price">$6.49</span></div></div>
+      <div class="card"><div class="ph"><img src="imgs/cubano-colada.jpg" alt="Sándwich cubano y colada"></div><div class="tx"><h3 data-es="Sándwich Cubano" data-en="Cuban Sandwich">Sándwich Cubano</h3><p data-es="Prensado en casa con pan cubano del día." data-en="Pressed in-house with fresh Cuban bread.">Prensado en casa con pan cubano del día.</p><span class="price">$9.99</span></div></div>
+      <div class="card"><div class="ph"><img src="imgs/pastelitos.jpg" alt="Pastelitos de guayaba"></div><div class="tx"><h3 data-es="Pastelitos de Guayaba" data-en="Guava Pastries">Pastelitos de Guayaba</h3><p data-es="Hojaldre dorado con guayaba y queso." data-en="Golden flaky pastry with guava and cheese.">Hojaldre dorado con guayaba y queso.</p><span class="price">$1.89</span></div></div>
+      <div class="card"><div class="ph"><img src="imgs/vitrina.jpg" alt="Éclairs"></div><div class="tx"><h3 data-es="Éclair de Chocolate" data-en="Chocolate Éclair">Éclair de Chocolate</h3><p data-es="Relleno generoso, de los más pedidos." data-en="Generous filling, a top seller.">Relleno generoso, de los más pedidos.</p><span class="price">$4.99</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="menu-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kick" data-es="Nuestro menú" data-en="Our menu">Nuestro menú</div>
+      <h2 data-es="Hecho en casa, todos los días" data-en="Homemade, every day">Hecho en casa, todos los días</h2>
+      <p data-es="Precios verificados en octubre 2026." data-en="Prices verified October 2026.">Precios verificados en octubre 2026.</p>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="menu-list" id="menu-list"></div>
+    <div class="menu-note" data-es="¿Antojo de algo más? Llámanos — la vitrina cambia todos los días." data-en="Craving something else? Call us — the display case changes daily.">¿Antojo de algo más? Llámanos — la vitrina cambia todos los días.</div>
+  </div>
+</section>
+
+<section id="pasteles" class="cakes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kick" data-es="Celebraciones" data-en="Celebrations">Celebraciones</div>
+      <h2 data-es="Pasteles para tu fiesta" data-en="Cakes for your party">Pasteles para tu fiesta</h2>
+      <p data-es="Tres leches, oreo, dulce de leche y más — hechos por encargo." data-en="Tres leches, oreo, dulce de leche and more — made to order.">Tres leches, oreo, dulce de leche y más — hechos por encargo.</p>
+    </div>
+    <div class="cake-grid">
+      <div class="cake"><h3 data-es="Pastel de Oreo" data-en="Oreo Cake">Pastel de Oreo</h3><span class="price">$45.99</span></div>
+      <div class="cake"><h3 data-es="Dulce de Leche" data-en="Dulce de Leche">Dulce de Leche</h3><span class="price">$45.99</span></div>
+      <div class="cake"><h3 data-es="Mousse de Chocolate" data-en="Chocolate Mousse">Mousse de Chocolate</h3><span class="price">$40.28</span></div>
+      <div class="cake"><h3 data-es="Redondo 8″" data-en="8″ Round">Redondo 8″</h3><span class="price">$37.68</span></div>
+    </div>
+    <div class="cake-cta">
+      <p data-es="Pide el tuyo con anticipación — también hacemos flanes y bandejitas de fiesta." data-en="Order yours ahead — we also make flans and party trays.">Pide el tuyo con anticipación — también hacemos flanes y bandejitas de fiesta.</p>
+      <a class="btn btn-amber" href="tel:+18132497550" data-es="Encargar por teléfono" data-en="Order by phone" style="background:var(--terra);color:#fff">Encargar por teléfono</a>
+    </div>
+  </div>
+</section>
+
+<section id="resenas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kick" data-es="Lo que dicen" data-en="Reviews">Lo que dicen</div>
+      <h2 data-es="Clientes que vuelven" data-en="Returning customers">Clientes que vuelven</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p data-es="“Nunca nos han decepcionado. El sándwich de Maikel es fantástico y el flan es lo más cercano al de mi mamá.”" data-en="“We have never been disappointed in anything we've ordered. Their Maikel's sandwich is fantastic and the flan is the closest to my mother's.”">“Nunca nos han decepcionado. El sándwich de Maikel es fantástico y el flan es lo más cercano al de mi mamá.”</p><div class="who">Laura C. · DoorDash</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p data-es="“La mejor panadería y el mejor servicio. Los churros son buenísimos y el pastel de oreo fenomenal.”" data-en="“The BEST bakery, and the absolutely BEST SERVICE EVER! Churros are great, and the Oreo Cake is phenomenal.”">“La mejor panadería y el mejor servicio. Los churros son buenísimos y el pastel de oreo fenomenal.”</p><div class="who">Carmen T. · DoorDash</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p data-es="“Mi panadería favorita. El café con leche es genuinamente el mejor café que he probado.”" data-en="“This is my favorite bakery. Their cafe con leche is genuinely the best coffee I've ever had.”">“Mi panadería favorita. El café con leche es genuinamente el mejor café que he probado.”</p><div class="who">Rylee S. · DoorDash</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="visitanos" class="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kick" data-es="Visítanos" data-en="Visit us">Visítanos</div>
+      <h2 data-es="Te esperamos" data-en="See you soon">Te esperamos</h2>
+    </div>
+    <div class="v-grid">
+      <div class="v-card">
+        <h3 data-es="Dirección" data-en="Address">Dirección</h3>
+        <p>7331 W Waters Ave<br>Tampa, FL 33634<br><span data-es="Town 'N Country Promenade" data-en="Town 'N Country Promenade">Town 'N Country Promenade</span></p>
+        <p style="margin-top:12px"><a href="tel:+18132497550">(813) 249-7550</a></p>
+      </div>
+      <div class="v-card">
+        <h3 data-es="Horario" data-en="Hours">Horario</h3>
+        <ul>
+          <li><span data-es="Lunes – Domingo" data-en="Monday – Sunday">Lunes – Domingo</span><span>5:00 AM – 11:00 PM</span></li>
+        </ul>
+        <p style="margin-top:12px" data-es="Abierto todos los días, desde la madrugada." data-en="Open every day, from dawn.">Abierto todos los días, desde la madrugada.</p>
+      </div>
+      <div class="v-card">
+        <h3>Delivery</h3>
+        <p data-es="Pide por DoorDash con entrega a domicilio o para recoger." data-en="Order on DoorDash for delivery or pickup.">Pide por DoorDash con entrega a domicilio o para recoger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Maikel's Bakery · 7331 W Waters Ave, Tampa, FL 33634 · (813) 249-7550</p>
+</footer>
+
+<a class="call-fab" href="tel:+18132497550" aria-label="Llamar">☎</a>
+
+<script>
+const MENU = {
+  es: {
+    "Dulces": [
+      ["Éclair de Chocolate","$4.99"],["Éclair de Dulce de Leche","$4.99"],["Éclair de Chocolate Blanco","$4.99"],
+      ["Señorita de Dulce de Leche","$4.69"],["Señorita de Chocolate","$4.69"],["Señorita de Azúcar","$4.69"],
+      ["Tres Leches (pequeño)","$6.49"],["Pasteles de Guayaba y Queso","$1.89"],["Pasteles de Guayaba","$1.89"],
+      ["Pasteles de Coco","$1.89"],["Pastel de Carne","$2.49"],["Empanadas de Pollo","$3.99"],
+      ["Croquetas de Jamón","$0.89"],["Merenguitos","$1.30"],["Chivirico","$1.50"],
+      ["Palmeras de Chocolate","$3.62"],["Palmeras Regulares","$3.44"],["Polvorones","$1.88"],["Coquito Acaramelado","$2.99"]
+    ],
+    "Café": [
+      ["Café con Leche (mediano)","$3.75"],["Café con Leche (grande)","$4.49"],
+      ["Colada","$3.29"],["Cortadito","$3.49"],["Chocolate (mediano)","$4.69"],["Chocolate caliente","$4.99"]
+    ],
+    "Sándwiches": [
+      ["Sándwich Cubano","$9.99"],["Sándwich de Maikel","$15.29"],["Pan con Bistec","$14.49"],
+      ["Minuta","$12.49"],["Medianoche","$9.99"],["Cubano Especial","$12.99"],
+      ["Pan con Lechón","$9.29"],["Frita Cubana","$8.99"],["Croquetas Preparadas","$8.29"],
+      ["Pan con 6 Croquetas","$7.99"],["Sándwich Tampa","$8.29"],["Croissant de Jamón y Queso","$6.49"],
+      ["Pollo a la Plancha","$12.49"]
+    ],
+    "Desayunos": [
+      ["Jamón, Huevo y Queso","$9.99"],["Tostada de Mantequilla y Café con Leche","$4.99"],
+      ["Tostada de Jamón y Queso","$6.99"]
+    ],
+    "Panes": [
+      ["Pan Cubano","$2.27"],["Pan de Mantequilla","$2.58"],["Pan de Ajo","$3.88"],["Pan de Guayaba y Queso","$6.48"]
+    ],
+    "Flanes y Cajas": [
+      ["Flan de Queso","$11.68"],["Flan de Coco","$11.68"],["Pudín Regular","$10.68"]
+    ]
+  },
+  en: {
+    "Sweets": [
+      ["Chocolate Éclair","$4.99"],["Dulce de Leche Éclair","$4.99"],["White Chocolate Éclair","$4.99"],
+      ["Dulce de Leche Señorita","$4.69"],["Chocolate Señorita","$4.69"],["Sugar Señorita","$4.69"],
+      ["Tres Leches (small)","$6.49"],["Guava & Cheese Pastries","$1.89"],["Guava Pastries","$1.89"],
+      ["Coconut Pastries","$1.89"],["Meat Pastry","$2.49"],["Chicken Empanadas","$3.99"],
+      ["Ham Croquettes","$0.89"],["Merenguitos","$1.30"],["Chivirico","$1.50"],
+      ["Chocolate Palmiers","$3.62"],["Regular Palmiers","$3.44"],["Polvorones","$1.88"],["Coquito Acaramelado","$2.99"]
+    ],
+    "Coffee": [
+      ["Café con Leche (medium)","$3.75"],["Café con Leche (large)","$4.49"],
+      ["Colada","$3.29"],["Cortadito","$3.49"],["Hot Chocolate (medium)","$4.69"],["Hot Chocolate","$4.99"]
+    ],
+    "Sandwiches": [
+      ["Cuban Sandwich","$9.99"],["Maikel's Sandwich","$15.29"],["Steak Sandwich","$14.49"],
+      ["Minuta","$12.49"],["Medianoche","$9.99"],["Cuban Special","$12.99"],
+      ["Roast Pork Sandwich","$9.29"],["Cuban Frita","$8.99"],["Prepared Croquettes","$8.29"],
+      ["Bread with 6 Croquettes","$7.99"],["Tampa Sandwich","$8.29"],["Ham & Cheese Croissant","$6.49"],
+      ["Grilled Chicken","$12.49"]
+    ],
+    "Breakfast": [
+      ["Ham, Egg & Cheese","$9.99"],["Butter Toast & Café con Leche","$4.99"],
+      ["Ham & Cheese Toast","$6.99"]
+    ],
+    "Breads": [
+      ["Cuban Bread","$2.27"],["Butter Bread","$2.58"],["Garlic Bread","$3.88"],["Guava & Cheese Bread","$6.48"]
+    ],
+    "Flans & Boxes": [
+      ["Cheese Flan","$11.68"],["Coconut Flan","$11.68"],["Regular Pudding","$10.68"]
+    ]
+  }
+};
+let lang = localStorage.getItem('mb-lang') || 'es';
+function renderTabs(){
+  const tabs = document.getElementById('tabs');
+  const list = document.getElementById('menu-list');
+  tabs.innerHTML = ''; list.innerHTML = '';
+  const cats = Object.keys(MENU[lang]);
+  cats.forEach((c,i)=>{
+    const b = document.createElement('button');
+    b.textContent = c; if(i===0) b.classList.add('on');
+    b.onclick = ()=>{ tabs.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); renderItems(c); };
+    tabs.appendChild(b);
+  });
+  renderItems(cats[0]);
+}
+function renderItems(cat){
+  const list = document.getElementById('menu-list');
+  list.innerHTML = MENU[lang][cat].map(it=>
+    '<div class="mi"><span class="nm">'+it[0]+'</span><span class="dots"></span><span class="pr">'+it[1]+'</span></div>'
+  ).join('');
+}
+function setLang(l){
+  lang = l; localStorage.setItem('mb-lang', l);
+  document.documentElement.lang = l;
+  document.getElementById('btn-es').classList.toggle('on', l==='es');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  document.querySelectorAll('[data-es]').forEach(el=>{ el.innerHTML = el.getAttribute('data-'+l); });
+  renderTabs();
+}
+document.getElementById('btn-es').onclick = ()=>setLang('es');
+document.getElementById('btn-en').onclick = ()=>setLang('en');
+setLang(lang);
+</script>
+</body>
+</html>
